@@ -31,8 +31,8 @@ This project is designed for Cloud Engineers, DevOps Engineers, and AWS beginner
       CloudWatch (Logs & Monitoring)
 
 ## 🧩 AWS Services Used
-      Services	                               Purpose
-      GitHub	                            Source code repository
+      Services	                                 Purpose
+      GitHub	                                Source code repository
       EC2	                                        Build Docker image & push to ECR
       Docker	                               Containerize Node.js application
       ECR	                                           Store Docker images
