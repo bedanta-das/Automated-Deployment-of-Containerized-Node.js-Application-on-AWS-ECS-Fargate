@@ -39,4 +39,10 @@ This project is designed for Cloud Engineers, DevOps Engineers, and AWS beginner
       ECS (Fargate)	                               Run containers without managing servers
       IAM	                                        Secure access & permissions
       CloudWatch	                               Logs & monitoring
+
+## 📂 Application Details
+* Application Type: Node.js (Todo App)
+* Port: 3000
+* Container Runtime: Docker
+* Deployment Type: Serverless (AWS Fargate)
   
