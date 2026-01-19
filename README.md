@@ -13,20 +13,28 @@ This project is designed for Cloud Engineers, DevOps Engineers, and AWS beginner
 ## 🏗️ Architecture Diagram (Conceptual)
 
 GitHub 
+
    |
    |
    V
+   
 EC2 (Docker Build)
+
        |
        |
        V
+       
     ECR (Docker Image Registry)
+    
                |
                |
                V
+               
             ECS (Fargate - Serverless Containers)
+            
                               |
                               |
                               V
+                              
                         CloudWatch (Logs & Monitoring)
   
