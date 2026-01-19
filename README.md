@@ -1,4 +1,4 @@
-# AWS ECS + ECR Project (Node.js Application Deployment)
+# 🚀 AWS ECS + ECR Project (Node.js Application Deployment)
 📌 Project Overview
 
 This project demonstrates end-to-end deployment of a Node.js application using AWS container services with a project-based DevOps approach.
