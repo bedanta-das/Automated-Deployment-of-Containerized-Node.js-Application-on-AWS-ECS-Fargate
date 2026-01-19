@@ -12,13 +12,13 @@ This project is designed for Cloud Engineers, DevOps Engineers, and AWS beginner
 
 ## 🏗️ Architecture Diagram (Conceptual)
 
-GitHub 
+   GitHub 
 
-   |
-   |
-   V
+      |
+      |
+      V
    
-EC2 (Docker Build)
+   EC2 (Docker Build)
 
        |
        |
