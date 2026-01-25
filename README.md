@@ -72,8 +72,10 @@ This project is designed for Cloud Engineers, DevOps Engineers, and AWS beginner
 * Connect with SSH
   
   <img src="Images/2.png" width="400">
+  
 
   <img src="Images/3.png" width="400">
+  
 
   <img src="Images/5.png" width="400">
 
