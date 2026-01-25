@@ -89,3 +89,82 @@ Add user to Docker group:
 Configure AWS credentials:
 
 aws configure
+
+4️⃣ Create ECR Repository
+
+Repository Type: Public
+
+Repository Name: node-app
+
+Architecture: x86_64 / ARM64
+
+5️⃣ Authenticate Docker to ECR
+
+            aws ecr-public get-login-password --region us-east-1 \
+            | docker login --username AWS --password-stdin public.ecr.aws
+            
+6️⃣ Build Docker Image
+
+            docker build -t node-app .
+
+7️⃣ Tag and Push Image to ECR
+
+            docker tag node-app:latest public.ecr.aws/<repo-id>/node-app:latest
+            docker push public.ecr.aws/<repo-id>/node-app:latest
+
+🚢 Deploy Using Amazon ECS (Fargate)
+8️⃣ Create ECS Cluster
+* Cluster Name: node-app-cluster
+* Infrastructure: AWS Fargate
+* Monitoring: CloudWatch Enabled
+
+9️⃣ Create Task Definition
+* Launch Type: Fargate
+* OS: Linux
+* CPU: 1 vCPU
+* Memory: 3 GB
+* Container Name: node-container
+* Image URI: ECR image URL
+* Port Mapping: 8000 → 8000
+* IAM Role: ecsTaskExecutionRole
+* Log Driver: CloudWatch
+
+🔟 Run Task
+* Select cluster: node-app-cluster
+* Launch task using the created task definition
+* Use default VPC & subnets
+
+🌐 Access Application
+* Copy Public IP of the ECS task
+* Open browser:
+
+            http://<PUBLIC-IP>:8000
+
+🎉 Your Node.js Todo App is now live on AWS ECS!
+
+📊 Monitoring & Logs
+CloudWatch Logs
+Path:
+
+            CloudWatch → Log Groups → /ecs/node-app
+
+You can view:
+* Application logs
+* Container start/stop logs
+* Errors & debugging info
+
+🔐 Security Notes
+* IAM User used only for:
+* ECR push access
+* ECS uses Task Execution Role
+* Port 8000 must be allowed in Security Group
+
+🧠 Common Issues & Fixes
+❌ App Not Accessible
+
+            ✔️ Ensure port 8000 is allowed in ECS task security group.
+
+❌ Docker Push Failed
+
+            ✔️ Verify IAM permissions:
+            AmazonEC2ContainerRegistryPublicFullAccess
