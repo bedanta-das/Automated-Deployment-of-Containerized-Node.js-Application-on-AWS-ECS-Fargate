@@ -169,6 +169,13 @@ You can view:
             ✔️ Verify IAM permissions:
             AmazonEC2ContainerRegistryPublicFullAccess
 
+## 🎯 Key Learnings
+* Serverless container deployment
+* Docker image lifecycle
+* ECS task & cluster management
+* Real-world DevOps workflow
+* AWS logging & monitoring
+
 ## Output
 
 
