@@ -177,6 +177,7 @@ You can view:
 * AWS logging & monitoring
 
 ## Output
+<img src="Images/23.png" width="400">
 
 
 ## 📄 License
