@@ -66,45 +66,45 @@ This project is designed for Cloud Engineers, DevOps Engineers, and AWS beginner
 2️⃣ Launch EC2 Instance (Build Server)
 * AMI: Ubuntu
 * Instance Type: t2.micro (Free Tier)
-  <img src="Images/1.png" width="800">
+  <img src="Images/1.png" width="400">
 * Connect with SSH
-  <img src="Images/2.png" width="800">
+  <img src="Images/2.png" width="400">
 
-  <img src="Images/3.png" width="800">
+  <img src="Images/3.png" width="400">
 
-  <img src="Images/5.png" width="800">
+  <img src="Images/5.png" width="400">
 
 Install required tools:
   
             sudo apt update
             sudo apt install docker.io unzip -y
 
-<img src="Images/6.png" width="800">
+<img src="Images/6.png" width="400">
 
-<img src="Images/7.png" width="800">
+<img src="Images/7.png" width="400">
 * Add user to Docker group:
 
             sudo usermod -aG docker $USER
             reboot
-<img src="Images/8.png" width="800">
+<img src="Images/8.png" width="400">
 
 3️⃣ Install AWS CLI
 
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             
-<img src="Images/9.png" width="800">
+<img src="Images/9.png" width="400">
 
             sudo apt install unzip
 
-<img src="Images/10.png" width="800">
+<img src="Images/10.png" width="400">
 
             unzip awscliv2.zip
 
-<img src="Images/11.png" width="800">
+<img src="Images/11.png" width="400">
 
             sudo ./aws/install
 
-<img src="Images/12.png" width="800">
+<img src="Images/12.png" width="400">
 
             aws --version
 
@@ -114,11 +114,11 @@ Install required tools:
 
 * To configure AWS we need Access Key and Secret Access Key. For that we need to go to IAM Users, select one user and create Access Key
 
-  <img src="Images/13.png" width="800">
+  <img src="Images/13.png" width="400">
 
 aws configure
 
-<img src="Images/14.png" width="800">
+<img src="Images/14.png" width="400">
 
 4️⃣ Create ECR Repository
 
@@ -128,31 +128,31 @@ Repository Name: node-app
 
 Architecture: x86_64 / ARM64
 
-<img src="Images/4.png" width="800">
+<img src="Images/4.png" width="400">
 
 5️⃣ Authenticate Docker to ECR
 
             aws ecr-public get-login-password --region us-east-1 \ | docker login --username AWS --password-stdin public.ecr.aws
 
-<img src="Images/15.png" width="800">
+<img src="Images/15.png" width="400">
             
 6️⃣ Build Docker Image
 
             docker build -t node-app .
 
-<img src="Images/16.png" width="800">
+<img src="Images/16.png" width="400">
 
 7️⃣ Tag and Push Image to ECR
 
             docker tag node-app:latest public.ecr.aws/<repo-id>/node-app:latest
 
-<img src="Images/17.png" width="800">
+<img src="Images/17.png" width="400">
 
             docker push public.ecr.aws/<repo-id>/node-app:latest
 
-<img src="Images/18.png" width="800">
+<img src="Images/18.png" width="400">
 
-  <img src="Images/19.png" width="800">
+  <img src="Images/19.png" width="400">
 
 ## 🚢 Deploy Using Amazon ECS (Fargate)
 8️⃣ Create ECS Cluster
@@ -160,7 +160,7 @@ Architecture: x86_64 / ARM64
 * Infrastructure: AWS Fargate
 * Monitoring: CloudWatch Enabled
 
-<img src="Images/20.png" width="800">
+<img src="Images/20.png" width="400">
 
 9️⃣ Create Task Definition
 * Launch Type: Fargate
@@ -173,7 +173,7 @@ Architecture: x86_64 / ARM64
 * IAM Role: ecsTaskExecutionRole
 * Log Driver: CloudWatch
 
-<img src="Images/21.png" width="800">
+<img src="Images/21.png" width="400">
 
 🔟 Run Task
 * Select cluster: node-app-cluster
@@ -186,7 +186,7 @@ Architecture: x86_64 / ARM64
 
             http://<PUBLIC-IP>:3000
 
-  <img src="Images/22.png" width="800">
+  <img src="Images/22.png" width="400">
 
 🎉 Your Node.js Todo App is now live on AWS ECS!
 
@@ -196,7 +196,7 @@ Path:
 
             CloudWatch → Log Groups → /ecs/node-app
 
-<img src="Images/24.png" width="800">
+<img src="Images/24.png" width="400">
 
 You can view:
 * Application logs
@@ -214,7 +214,7 @@ You can view:
 
             ✔️ Ensure port 3000 is allowed in ECS task security group.
 
-<img src="Images/25.png" width="800">
+<img src="Images/25.png" width="400">
 
 ❌ Docker Push Failed
 
@@ -229,7 +229,7 @@ You can view:
 * AWS logging & monitoring
 
 ## Output
-<img src="Images/23.png" width="800">
+<img src="Images/23.png" width="400">
 
 
 ## 📄 License
