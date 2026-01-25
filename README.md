@@ -66,8 +66,11 @@ This project is designed for Cloud Engineers, DevOps Engineers, and AWS beginner
 2️⃣ Launch EC2 Instance (Build Server)
 * AMI: Ubuntu
 * Instance Type: t2.micro (Free Tier)
+
   <img src="Images/1.png" width="400">
+  
 * Connect with SSH
+  
   <img src="Images/2.png" width="400">
 
   <img src="Images/3.png" width="400">
@@ -82,10 +85,12 @@ Install required tools:
 <img src="Images/6.png" width="400">
 
 <img src="Images/7.png" width="400">
+
 * Add user to Docker group:
 
             sudo usermod -aG docker $USER
             reboot
+  
 <img src="Images/8.png" width="400">
 
 3️⃣ Install AWS CLI
